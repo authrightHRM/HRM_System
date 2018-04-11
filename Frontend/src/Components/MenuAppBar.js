@@ -134,9 +134,9 @@ class MenuAppBar extends React.Component {
 
                   {this.props.roleAdmin && (
                     <nav style={{ display: "flex" }}>
-                      <Link to={'/userManagement'}>
+                      {/* <Link to={'/userManagement'}>
                         <div className={classes.navButton}>User Management</div>
-                      </Link>
+                      </Link> */}
                       <Link to={'/timesheetManagement'}>
                         <div className={classes.navButton}>Timesheet Management</div>
                       </Link>

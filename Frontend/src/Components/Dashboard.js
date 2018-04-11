@@ -86,7 +86,7 @@ class Dashboard extends React.Component {
                 )}
                 {this.props.roleAdmin && (
                     <span style={{display: "flex"}}>
-                        <Card className={this.props.classes.card}>
+                        {/* <Card className={this.props.classes.card}>
                             <Link to="/UserManagement">
                                 <CardContent>
                                     <img src={userIcon} alt="UserManagement" className={this.props.classes.icon} />
@@ -97,7 +97,7 @@ class Dashboard extends React.Component {
                         </Typography>
                                 </CardContent>
                             </Link>
-                        </Card>
+                        </Card> */}
                         <Card className={this.props.classes.card}>
                             <Link to="/timesheetManagement">
                                 <CardContent>
