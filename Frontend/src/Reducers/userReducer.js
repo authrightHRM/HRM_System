@@ -3,6 +3,7 @@ const initialState = {
     loggedIn: false,
     loggingIn: false,
     loginError: false,
+    loginMessage:'',
 
     updating: false,
     updated: false,
@@ -10,6 +11,7 @@ const initialState = {
     fetched: false,
     userList: [],
     updatedUser: null,
+    passwordEmailSent:null
 };
 
 export const user = (state = initialState, action) => {
@@ -30,7 +32,7 @@ export const user = (state = initialState, action) => {
             };
         }
         case 'LOGIN_FAILURE': {
-            return {...state, loggingIn: false, loginError: true};
+            return {...state, loggingIn: false, loginError: true, loginMessage: 'Invalid username or password!'};
         }
         case 'LOAD_TOKEN': {
             return {...state,
@@ -89,6 +91,12 @@ export const user = (state = initialState, action) => {
         }
         case 'UPDATE_USER_FAILURE': {
             return {...state, updating: false, error: true};
+        }
+        case 'PASSWORD_EMAIL_ERROR': {
+            return {...state, loginError: true, loginMessage: 'Error sending email: ' + action.payload};
+        }
+        case 'PASSWORD_RESET_EMAIL_SENT': {
+            return {...state, loginError: false, loginMessage: action.payload}
         }
 
         default: return state;
