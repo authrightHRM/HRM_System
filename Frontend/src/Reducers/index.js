@@ -19,5 +19,3 @@ export const allReducers = combineReducers({
     submitWeeklyhours: SubmitWeeklyhours,
     login: Login,
 });
-
-// export default allReducers;
