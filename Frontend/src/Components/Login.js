@@ -46,9 +46,10 @@ class Login extends React.Component {
     render() {
         const { from } = this.props.location.state || { from: { pathname: '/' } };
 
-
-        // let visibility = "";
-        // visibility = (this.props.loginError || this.state.loginError) ? "visible" : "hidden";
+        /* If using visibility instead of hidden
+         * let visibility = "";
+         * visibility = (this.props.loginError || this.state.loginError) ? "visible" : "hidden";
+        */
 
         // Redirect to private route if user already logged in
         if (this.props.loggedIn) {
@@ -66,7 +67,7 @@ class Login extends React.Component {
         return (
             <div className="loginContainer">
                 <div className="row justify-content-md-center">
-                    <div className="col-12 col-md-6">
+                    <div className="col-sm-12 col-md-4">
                         <div className="card">
                             <div className="card-header">
                                 <div className="img">

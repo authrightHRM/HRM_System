@@ -39,14 +39,14 @@ class NavBar extends React.Component {
                             Timesheet
                         </NavLink>
                     )}
-                    {this.props.roleUser && (
+                    {/* {this.props.roleUser && (
                         <NavLink to={'/timesheet/history'}
                             className='navLink'
                             activeClassName='selected'
                         >
                             View History
                         </NavLink>
-                    )}
+                    )} */}
                     {this.props.roleAdmin && (
                         <NavLink to={'/userManagement'}
                             className='navLink'

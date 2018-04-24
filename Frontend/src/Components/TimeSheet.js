@@ -1,4 +1,5 @@
 import React from 'react';
+import './common.css';
 import {
     Link,
     Route,
@@ -6,13 +7,15 @@ import {
 } from 'react-router-dom'
 import { fetchContracts, selectInitial, select } from '../actions/weektime_actions';
 import { connect } from "react-redux";
-import SideBar from"./sideBar";
+import SideBar from "./sideBar";
+import WeekTimeList from "./weektimeList";
+import WeektimeDetails from "./weektimeDetails";
 
 class Timesheet extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            history: false
+            // history: false
         };
     }
 
@@ -31,10 +34,30 @@ class Timesheet extends React.Component {
 
         return (
             <div className="timesheetContainer">
-                <div className="row">
-                    <div className="col col-md-9">Timesheet</div>
+                <div className="row justify-content-md-center">
+                    <div className="col col-md-9">
+                        <Switch>
+                            <Route
+                                exact
+                                path={this.props.match.url}
+                                render={(props) => (<WeekTimeList {...props}
+                                    weekTimes={this.props.weekTimes}
+                                    contracts={this.props.contracts}
+                                    selectedMonday={this.props.selectedMonday}
+                                    selectInitial={this.props.selectInitial}
+                                />
+                                )}
+                            />
+                            <Route
+                                path={this.props.match.url + '/weektime:windex'}
+                                // render={(props) => (<Detail {...props} weekTimes={this.props.weekTimes} />)} 
+                                component={WeektimeDetails}
+                            />
+                        </Switch>
+                    </div>
+
                     <div className="col col-md-3">
-                    <SideBar></SideBar>
+                        <SideBar selectedMonday={this.props.selectedMonday} select={this.props.select} />
                     </div>
                 </div>
             </div>

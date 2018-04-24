@@ -17,12 +17,14 @@ class SideBar extends React.Component {
     }
 
     render() {
+        /* Decide the content of contact info */
+
         let contactInfo = null;
         // console.log(this.props.selectWeek);
         if (this.props.selectWeek) {
             contactInfo = (
-                <div className={this.props.classes.list}>
-                    <p type="title" className={this.props.classes.title}>
+                <div>
+                    <p className="contactName">
                         {/* Contact Name: {this.props.selectWeek.contract.contactName} */}
                         {this.props.selectWeek.contract.contactName}
                     </p>
@@ -36,7 +38,7 @@ class SideBar extends React.Component {
                     <p>
                         PhoneNumber: {this.props.selectWeek.contract.contactPhoneNumber}
                     </p>
-                    <p className={this.props.classes.pos}>
+                    <p className="pos">
                         {this.props.selectWeek.contract.content}
                     </p>
                 </div>
@@ -44,10 +46,10 @@ class SideBar extends React.Component {
         } else {
             contactInfo = (
                 <div>
-                    <p className="pos">If you have any question, please contact</p>
-                    <p>
+                    <p className="text-secondary">If you have any question, please contact</p>
+                    <h4 className="contactName">
                         Admin
-                    </p>
+                    </h4>
                     <p>
                         Email: Admin@test.com
                     </p>
@@ -63,19 +65,19 @@ class SideBar extends React.Component {
                         weekdayColor: 'rgba(33, 150, 243, 0.90)',
                     }}
                     width={"100%"}
-                    height={window.innerWidth * 0.15} // height={336} 
-                    // selected={new Date()}
+                    height={window.innerWidth * 0.15}
                     selected={this.props.selectedMonday == null ? new Date() : this.props.selectedMonday}
                     onSelect={this.onCalenderSelect}
                     locale={{
                         weekStartsOn: 1
                     }}
                 />
+
                 <div className="card contact">
                     <div className="card-body">
-                        <p>
+                        <h3 align="center">
                             Contact Info
-                        </p>
+                        </h3>
                         {contactInfo}
                     </div>
                 </div>
@@ -88,7 +90,6 @@ const mapStateToProps = (state) => {
     return {
         contracts: state.weektime.contracts,
         selectWeek: state.weektime.selectedWeek,
-        user: state.user.user,
     }
 }
 

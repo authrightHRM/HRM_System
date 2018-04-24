@@ -24,8 +24,6 @@ footer {
   flex-direction: column;
   overflow: hidden;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-image: url("resource/background.jpg");
 }
 

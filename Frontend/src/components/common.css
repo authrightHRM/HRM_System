@@ -15,7 +15,7 @@
 
 .selected {
     margin: 20px 0 10px 20px;
-    color: rgba(255,183,77,85);
+    color: rgba(255,183,77);
 }
 
 .flexContainer {
@@ -49,8 +49,8 @@
     right: 0;
     background-color: #f9f9f9;
     min-width: 100px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1; */
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 100; 
 }
 
 .dropdown-content a {
@@ -112,7 +112,7 @@
 /* login css */
 .loginContainer {
     flex-grow: 1;
-    margin-top: 50px;
+    margin: 50px 20px 20px 20px;
     
 }
 
@@ -133,28 +133,15 @@
 
 
 /* sideBar css */
-.weekTime {
+/* .weekTime {
     width: 100%;
     margin: 10px 0px;
-    /* '&:hover': {
-        boxShadow: '0px 3px 5px 0px rgba(158,158,158, 1)',
-        backgroundColor: "white",
-    }, */
     border-radius: 5;
-    background-color: "rgba(255, 255, 255, 0.85)";
-}
-
-.pos {
-    margin-bottom: 12;
-    color: "rgb(150,150,150)";
-}
-/* shadowing: {
-    boxShadow: '0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12)',
-    //same as card default, possible to use prop from themes to change it
+    background-color: rgba(255, 255, 255, 0.85);
 } */
 
-.title {
-    color: "#1976D2";
+.contactName {
+    color: #1976D2;
 }
 
 .contact {
@@ -165,4 +152,33 @@
 /* timesheet css */
 .timesheetContainer {
     margin: 20px 20px 10px 20px;
+}
+
+/* weektimeList css */
+.Weektime {
+    color: black;
+    margin: 1rem;
+    min-width: 300px;
+    border-radius: 5px;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardtitle{
+    padding: 10px;
+    background: radial-gradient(white, rgba(240,240,240, 0.85));
+}
+
+.project{
+    margin: 12px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.hour{
+    padding: 12px;
+    background: radial-gradient(rgba(255, 183, 77, 0.55), rgba(255, 183, 77, 0.75));
+    color: white;
 }
