@@ -1,9 +1,8 @@
 import { applyMiddleware, createStore, combineReducers} from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
-import { user } from './Reducers/userReducer';
-import { weektime } from './Reducers/weektimeReducer';
-// import { allReducers } from './Reducers/index';
+import { user } from './reducers/userReducer';
+import { weektime } from './reducers/weektimeReducer';
 
 const middleware = applyMiddleware(thunk, logger);
 

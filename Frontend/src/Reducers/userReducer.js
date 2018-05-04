@@ -3,15 +3,18 @@ const initialState = {
     loggedIn: false,
     loggingIn: false,
     loginError: false,
-    loginMessage:'',
 
     updating: false,
     updated: false,
+    updatedUser: null,
+
+    creating: false,
+    created: false,
+    createdUser: null,
+
     fetching: false,
     fetched: false,
     userList: [],
-    updatedUser: null,
-    passwordEmailSent:null
 };
 
 export const user = (state = initialState, action) => {
@@ -32,7 +35,7 @@ export const user = (state = initialState, action) => {
             };
         }
         case 'LOGIN_FAILURE': {
-            return {...state, loggingIn: false, loginError: true, loginMessage: 'Invalid username or password!'};
+            return {...state, loggingIn: false, loginError: true};
         }
         case 'LOAD_TOKEN': {
             return {...state,
@@ -46,9 +49,6 @@ export const user = (state = initialState, action) => {
             return initialState;
         }
 
-        // case 'UPDATE_USER_INITIAL': {
-        //     return {...state, updated: false};
-        // }
         case 'UPDATE_PROFILE_PENDING': {
             return {...state, updating: true};
         }
@@ -78,6 +78,10 @@ export const user = (state = initialState, action) => {
             return {...state, fetching: false, error: true};
         }
 
+
+        case 'UPDATE_USER_INITIAL': {
+            return {...state, updated: false};
+        }
         case 'UPDATE_USER_PENDING': {
             return {...state, updating: true};
         }
@@ -92,11 +96,23 @@ export const user = (state = initialState, action) => {
         case 'UPDATE_USER_FAILURE': {
             return {...state, updating: false, error: true};
         }
-        case 'PASSWORD_EMAIL_ERROR': {
-            return {...state, loginError: true, loginMessage: 'Error sending email: ' + action.payload};
+
+        case 'CREATE_USER_INITIAL': {
+            return {...state, created: false};
         }
-        case 'PASSWORD_RESET_EMAIL_SENT': {
-            return {...state, loginError: false, loginMessage: action.payload}
+        case 'CREATE_USER_PENDING': {
+            return {...state, creating: true};
+        }
+        case 'CREATE_USER_SUCCESS': {
+            state.createdUser = action.payload;
+            
+            return {...state, 
+                creating: false, 
+                created: true
+            }
+        }
+        case 'CREATE_USER_FAILURE': {
+            return {...state, creating: false, error: true};
         }
 
         default: return state;
