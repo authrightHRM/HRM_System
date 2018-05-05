@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '.././resource/authrightlogo.png';
+import logo from '.././Resource/authrightlogo.png';
 import { Link, NavLink } from 'react-router-dom'
 import './common.css';
 import { store } from '../store';
-import { logout } from '../actions/auth_actions';
+import { logout } from '../Actions/auth_actions';
 
 class NavBar extends React.Component {
     constructor(props) {

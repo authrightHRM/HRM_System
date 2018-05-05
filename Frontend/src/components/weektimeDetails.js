@@ -3,7 +3,7 @@ import './common.css';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import Redirect from 'react-router-dom/Redirect';
-import { update, updateInitial, unSelectedWeek } from '../actions/weektime_actions';
+import { update, updateInitial, unSelectedWeek } from '../Actions/weektime_actions';
 
 class WeektimeDetails extends React.Component {
     constructor(props, weekdays) {

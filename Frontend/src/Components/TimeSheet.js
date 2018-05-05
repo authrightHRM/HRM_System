@@ -5,9 +5,9 @@ import {
     Route,
     Switch
 } from 'react-router-dom'
-import { fetchContracts, selectInitial, select } from '../actions/weektime_actions';
+import { fetchContracts, selectInitial, select } from '../Actions/weektime_actions';
 import { connect } from "react-redux";
-import SideBar from "./sideBar";
+import SideBar from "./SideBar";
 import WeekTimeList from "./weektimeList";
 import WeektimeDetails from "./weektimeDetails";
 

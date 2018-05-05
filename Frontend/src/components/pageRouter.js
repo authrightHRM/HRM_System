@@ -1,15 +1,15 @@
 import React from 'react';
 import NavBar from './navBar';
-import Dashboard from './dashboard';
-import Login from './login';
-import TimeSheet from './timesheet';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import TimeSheet from './TimeSheet';
 import {
     Route,
     Switch,
     Redirect,
     withRouter
 } from 'react-router-dom'
-import { login, logout, checkSession } from '../actions/auth_actions';
+import { login, logout, checkSession } from '../Actions/auth_actions';
 import { connect } from 'react-redux';
 
 class PageRouter extends React.Component {

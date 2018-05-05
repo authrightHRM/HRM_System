@@ -1,6 +1,6 @@
 import React from "react";
 import './common.css';
-import { selectWeek } from "../actions/weektime_actions";
+import { selectWeek } from "../Actions/weektime_actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './common.css';
-import logo from '../resource/authrightlogo.png';
+import logo from '../Resource/authrightlogo.png';
 import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
