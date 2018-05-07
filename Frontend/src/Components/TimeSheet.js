@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import SideBar from "./sideBar";
 import WeekTimeList from "./weektimeList";
 import WeektimeDetails from "./weektimeDetails";
+import loading from '../resource/loading2.gif';
 
 class Timesheet extends React.Component {
     constructor(props) {
@@ -28,7 +29,10 @@ class Timesheet extends React.Component {
     render() {
         if (this.props.fetching) {
             return (
-                <img src="../resource/loading.gif" alt="loading" />
+                <img src={loading} alt="loading" className="loading"/>
+                // <div className="progress progress-striped active">
+                //     <div className="bar" style={{width:"100%"}}></div>
+                // </div>
             );
         }
 

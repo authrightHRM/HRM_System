@@ -3,6 +3,7 @@ import NavBar from './navBar';
 import Dashboard from './dashboard';
 import Login from './login';
 import TimeSheet from './timesheet';
+import MyProfile from './myProfile';
 import {
     Route,
     Switch,
@@ -117,8 +118,8 @@ class PageRouter extends React.Component {
                         />}
                     />
                     <PrivateRoute path="/timesheet" component={TimeSheet} />
-                    {/* <PrivateRoute path="/myProfile" component={MyProfile} />
-                    <AdminRoute exact path="/userManagement" component={UserList} />
+                    <PrivateRoute path="/myProfile" component={MyProfile} />
+                    {/* <AdminRoute exact path="/userManagement" component={UserList} />
                     <AdminRoute path="/timesheetManagement" component={TimesheetManagement} />
                     <AdminRoute strict path="/userManagement/" component={UserDetail} />
                     <AdminRoute path="/userManagement/user:uindex" component={UserDetail} />
