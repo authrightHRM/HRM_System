@@ -1,0 +1,310 @@
+.loading {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -50px;
+    width: 150px;
+    height: 150px;
+}
+.card:hover {
+    box-shadow: 2px 3px 5px 0px rgba(158,158,158, 1);
+    /* background: white; */
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.cancelHover:hover {
+    box-shadow:none;
+}
+
+/* navBar css */
+.navbar {
+    background-color: #2196f3;
+    padding: 0 1rem 0.5rem 1.5rem;
+}
+
+.navLink {      /* For navLink */
+    margin: 20px 0 10px 20px;
+    color: white;
+}
+
+.navLink:hover {
+    color: rgba(255,183,77,85);
+}
+
+.selected {
+    margin: 20px 0 10px 20px;
+    color: rgba(255,183,77);
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navText {
+    margin: 20px 20px 10px 20px;
+    color: white;
+}
+
+/* For Dropdown Menu */
+.dropbtn {
+    background-color: #2196f3;
+    color: white;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 100; 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px 8px;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #2196f3;
+    color: black;
+}
+
+
+/* Dashboard css */
+.dashboardContent {
+    max-width: 200px;
+    min-width: 200px;
+    min-height: 200px;
+    margin-left: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px rgba(158,158,158, 1);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.contentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-left: 100px;
+    flex-direction: row,
+}
+
+.icon {
+    width: 70px;
+    height: auto;
+    margin-left: 50px;
+}
+
+
+/* login css */
+.loginContainer {
+    flex-grow: 1;
+    margin: 50px 20px 20px 20px;
+    
+}
+
+.card-header {
+    padding: 0;
+    text-align: center;
+}
+
+.img {
+    background-color: rgb(33, 150, 243);
+    padding: 0 16px;
+}
+
+#login {
+    width: 100%;
+    background-color: rgb(33, 150, 243);
+}
+
+
+/* sideBar css */
+.contactName {
+    color: #1976D2;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+
+/* timesheet css */
+.timesheetContainer {
+    margin: 20px 20px 10px 20px;
+}
+
+/* weektimeList css */
+.weektimeList-margin {
+    margin: 1rem;
+}
+
+.Weektime {
+    color: black;
+    min-width: 300px;
+    border-radius: 5px;
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardtitle{
+    padding: 10px;
+    background: radial-gradient(white, rgba(240,240,240, 0.85));
+}
+
+.project{
+    margin: 12px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.hour{
+    padding: 12px;
+    background: radial-gradient(rgba(255, 183, 77, 0.55), rgba(255, 183, 77, 0.75));
+    color: white;
+}
+
+/* WeektimeDetails css */
+.weekdayContainer {
+    display: flex;
+    padding: 0;
+}
+@media only screen and (max-width: 1323px) {
+    .weekdayContainer {
+      display: block;
+    }
+}
+
+.weekday {
+    min-width: 105px;
+    border-radius: 0%;
+}
+
+.weekdayTitle {
+    padding: 1rem 0;
+}
+
+.btn-weektimeDetails{
+    background-color:rgba(240,240,240, 0.85);
+    margin-left: 5px;
+}
+
+.rightIcon {
+    margin-left: 5px;
+}
+
+
+/* myProfile css */
+.myProfile{
+    margin : 10px;
+}
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.nameBackground{
+    padding-top: 30 !important;  
+    padding-bottom: 30 !important; 
+    background-color: #424242 !important;
+    opacity: 0.6 !important;
+    z-index: 2 !important;
+
+    animation-duration : 1s !important;
+    animation-name: appear !important;
+}
+
+.typography {
+    z-index: 3;
+    color: #FAFAFA;
+}
+
+.profileBackground {
+    padding-bottom: 30px;
+    background-color: #212121;
+    margin-top: 8px;
+    opacity: 0.7px;
+    animation-duration: 1s;
+    animation-name: appear;
+}
+
+.portrait {
+    margin-top: 100px;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+    margin-left: 20%;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 0%;
+      transform: scale(0);; 
+      visibility: hidden
+    }
+    to {
+      transform: scale(1);
+      margin-left: 20%;
+      visibility: visible
+    }
+}
+
+@keyframes appear {
+    from {
+      transform: scale(0);
+      width: 0%;
+      visibility: hidden
+    }
+    to {
+      transform: scale(1);
+      width: 100%;
+      visibility: visible
+    }
+}
+    
+.newPassword {
+    border-top: 1px dotted #666666;
+    text-align: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.formControl {
+    margin: 30px;
+    margin-top: 10px;
+}
+
+.commentText {
+    color: rgba(255,255,255,0.6);
+}
+
+.formHelperText {
+    color: "rgba(255,255,255,0.6)"
+}
