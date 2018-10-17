@@ -63,6 +63,14 @@ class NavBar extends React.Component {
                             Timesheet Management
                         </NavLink>
                     )}
+                    {this.props.roleAdmin && (
+                        <NavLink to={'/clientManagement'}
+                            className='navLink'
+                            activeClassName='selected'
+                        >
+                            Client Management
+                        </NavLink>
+                    )}
                 </div>
                 <div className="flexContainer">
                     {this.props.user ? <div className="navText">Hello, {this.props.user.firstName} ! </div> : <div className="navText">Welcome!</div>}
