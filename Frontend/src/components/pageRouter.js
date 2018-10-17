@@ -1,10 +1,11 @@
 import React from 'react';
 import NavBar from './navBar';
-import Dashboard from './Dashboard';
-import Login from './Login';
-import TimeSheet from './TimeSheet';
+import Dashboard from './dashboard';
+import Login from './login';
+import TimeSheet from './timesheet';
 import ClientList from './ClientList';
 import ClientDetail from './ClientDetail';
+import MyProfile from './myProfile';
 import {
     Route,
     Switch,

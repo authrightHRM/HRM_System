@@ -1,3 +1,24 @@
+.loading {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -50px;
+    width: 150px;
+    height: 150px;
+}
+.card:hover {
+    box-shadow: 2px 3px 5px 0px rgba(158,158,158, 1);
+    /* background: white; */
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.cancelHover:hover {
+    box-shadow:none;
+}
+
 /* navBar css */
 .navbar {
     background-color: #2196f3;
@@ -85,15 +106,6 @@
     background-color: rgba(255, 255, 255, 0.95);
 }
 
-.card:hover {
-    box-shadow: 2px 3px 5px 0px rgba(158,158,158, 1);
-    background: white;
-}
-
-.card-body {
-    padding: 1rem;
-}
-
 .contentContainer {
     display: flex;
     flex-wrap: wrap;
@@ -133,13 +145,6 @@
 
 
 /* sideBar css */
-/* .weekTime {
-    width: 100%;
-    margin: 10px 0px;
-    border-radius: 5;
-    background-color: rgba(255, 255, 255, 0.85);
-} */
-
 .contactName {
     color: #1976D2;
 }
@@ -155,9 +160,12 @@
 }
 
 /* weektimeList css */
+.weektimeList-margin {
+    margin: 1rem;
+}
+
 .Weektime {
     color: black;
-    margin: 1rem;
     min-width: 300px;
     border-radius: 5px;
 }
@@ -181,4 +189,122 @@
     padding: 12px;
     background: radial-gradient(rgba(255, 183, 77, 0.55), rgba(255, 183, 77, 0.75));
     color: white;
+}
+
+/* WeektimeDetails css */
+.weekdayContainer {
+    display: flex;
+    padding: 0;
+}
+@media only screen and (max-width: 1323px) {
+    .weekdayContainer {
+      display: block;
+    }
+}
+
+.weekday {
+    min-width: 105px;
+    border-radius: 0%;
+}
+
+.weekdayTitle {
+    padding: 1rem 0;
+}
+
+.btn-weektimeDetails{
+    background-color:rgba(240,240,240, 0.85);
+    margin-left: 5px;
+}
+
+.rightIcon {
+    margin-left: 5px;
+}
+
+
+/* myProfile css */
+.myProfile{
+    margin : 10px;
+}
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.nameBackground{
+    padding-top: 30 !important;  
+    padding-bottom: 30 !important; 
+    background-color: #424242 !important;
+    opacity: 0.6 !important;
+    z-index: 2 !important;
+
+    animation-duration : 1s !important;
+    animation-name: appear !important;
+}
+
+.typography {
+    z-index: 3;
+    color: #FAFAFA;
+}
+
+.profileBackground {
+    padding-bottom: 30px;
+    background-color: #212121;
+    margin-top: 8px;
+    opacity: 0.7px;
+    animation-duration: 1s;
+    animation-name: appear;
+}
+
+.portrait {
+    margin-top: 100px;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+    margin-left: 20%;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 0%;
+      transform: scale(0);; 
+      visibility: hidden
+    }
+    to {
+      transform: scale(1);
+      margin-left: 20%;
+      visibility: visible
+    }
+}
+
+@keyframes appear {
+    from {
+      transform: scale(0);
+      width: 0%;
+      visibility: hidden
+    }
+    to {
+      transform: scale(1);
+      width: 100%;
+      visibility: visible
+    }
+}
+    
+.newPassword {
+    border-top: 1px dotted #666666;
+    text-align: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.formControl {
+    margin: 30px;
+    margin-top: 10px;
+}
+
+.commentText {
+    color: rgba(255,255,255,0.6);
+}
+
+.formHelperText {
+    color: "rgba(255,255,255,0.6)"
 }

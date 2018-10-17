@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import Redirect from 'react-router-dom/Redirect';
 import { update, updateInitial, unSelectedWeek } from '../Actions/weektime_actions';
+import loading from '../Resource/loading.gif';
 
 class WeektimeDetails extends React.Component {
     constructor(props, weekdays) {
@@ -118,23 +119,14 @@ class WeektimeDetails extends React.Component {
         this.props.submit(this.state.updateWeektime);
     }
 
-    handleClickOpen = () => {
-        this.setState({ dialogOpen: true });
-    };
-
-    handleCancel = () => {
-        this.setState({ dialogOpen: false });
-    };
-
     handleOK = () => {
-        this.setState({ dialogOpen: false });
         this.submit();
     };
 
     render() {
         if (this.props.fetching) {
             return (
-                <img src="../resource/loading.gif" alt="loading" />
+                <img src={loading} alt="loading" className="loading"/>
             );
         }
         if (this.state.redirected) {
@@ -144,7 +136,7 @@ class WeektimeDetails extends React.Component {
             )
         }
         let { updateWeektime } = this.state;
-        const { updated, classes, contracts } = this.props
+        const { updated, contracts } = this.props
         let contract = null;
         for (let i = 0; i < contracts.length; i++) {
             if (updateWeektime.contractId === contracts[i].id) {
@@ -160,15 +152,88 @@ class WeektimeDetails extends React.Component {
         return (
             <div>
                 <div className="row justify-content-md-center">
-                    <div className="col-sm-12 col-md-4">
+                    <div className="col-sm-11">
                         <div className="alert alert-success" role="alert" style={{ visibility: alertVisibility }}>
-                        {/* <div className="alert alert-success" role="alert"> */}
+                            {/* <div className="alert alert-success" role="alert"> */}
                             Successfully updated!
                         </div>
-                        {/* <button type="button" class="btn btn-primary" onClick={this.approve}>Approve</button>
-                        <button type="button" class="btn btn-primary" onClick={this.reject}>Reject</button> */}
-                        <div className="card">
-                            <div className="card-header">
+
+                        <div className="card cancelHover">
+                            <div align="center" className="cardtitle">
+                                Week {updateWeektime.mondayDate.toLocaleDateString().slice(0, 10)} to {new Date(updateWeektime.mondayDate.getTime() + 6 * 24 * 3600 * 1000).toLocaleDateString().slice(0, 10)}
+                            </div>
+                            <div className="card-body weekdayContainer">
+                                {this.weekdays.map(weekday => (
+                                    <div className="card weekday cancelHover" key={weekday}>
+                                        <div className="card-body weekdayTitle">
+                                            <div align="center" className="weekdayTitle">
+                                                {weekday}
+                                            </div>
+                                        </div>
+                                        <div className="card-body">
+                                            {/* <label for="exampleInputEmail1">Email address</label> */}
+                                            <input
+                                                type="number"
+                                                className="form-control"
+                                                id="hours"
+                                                placeholder="Hours"
+                                                value={this.state.updateWeektime[weekday.toLowerCase()]}
+                                                disabled={this.state.updateWeektime.submitted}
+                                                onChange={this.onChangeHours(weekday.toLowerCase())}
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="card cancelHover">
+                                <div className="card-body">
+                                    <textarea
+                                        type="text"
+                                        disabled={this.state.updateWeektime.submitted}
+                                        className="form-control"
+                                        id="Note"
+                                        placeholder="Note"
+                                        value={this.state.updateWeektime.note == null ? "" : this.state.updateWeektime.note}
+                                        onChange={this.onChangeNote}
+                                    />
+                                    <div>Total: {this.state.total}</div>
+                                </div>
+                                <div className="card-body">
+                                    <Link to='/timesheet'>
+                                        <button className="btn btn-weektimeDetails">
+                                            {returnBack}
+                                            {/* <Send className={classes.rightIcon} /> */}
+                                        </button>
+                                    </Link>
+                                    {
+                                        !this.state.updateWeektime.submitted && (
+                                            <span style={{ float: "right" }}>
+                                                {/* <button className="btn btn-weektimeDetails" onClick={this.handleClickOpen}> */}
+                                                <button className="btn btn-weektimeDetails" data-toggle="modal" data-target="#ModalCenter">
+                                                    Submit
+                                                    <i className="fas fa-paper-plane rightIcon"></i>
+                                                </button>
+                                                <button className="btn btn-weektimeDetails" onClick={this.update}>
+                                                    Save
+                                                    <i className="fas fa-save rightIcon"></i>
+                                                </button>
+                                            </span>
+                                        )
+                                    }
+                                </div>
+                                <div className="modal fade" id="ModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div className="modal-dialog modal-dialog-centered" role="document">
+                                        <div className="modal-content">
+                                            <div className="modal-body">
+                                                Are you sure to submit this timesheet? Action cannot be undone.
+                                            </div>
+                                            <div className="modal-footer">
+                                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <button type="button" className="btn btn-primary"  data-dismiss="modal" onClick={this.handleOK}>Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

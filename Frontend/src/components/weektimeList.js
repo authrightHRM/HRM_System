@@ -92,38 +92,42 @@ class WeekTimeList extends React.Component {
         // let alertVisibility = !history ? "visible" : "hidden";
         return (
             <div className="WeektimeList">
-                WeektimeList
-                <button onClick={this.props.selectInitial}>
-                    <i className="fas fa-redo-alt"></i>
-                </button>
+                <div className="row justify-content-md-center ">
+                    <h3 className="weektimeList-margin">WeektimeList</h3>
+                    <button className="btn btn-sm" onClick={this.props.selectInitial}>
+                        <i className="fas fa-redo-alt"></i>
+                    </button>
+                </div>
                 <div className="row justify-content-md-center ">
                     {renderWeekTimes.map((weektime, index) => (
-                        <Link to={"/timesheet/weektime" + map.get(index)} key={map.get(index)} >
-                            <div
-                                className="card Weektime"
-                                onClick={() => this.props.selectWeek(weektime)}
-                            >
-                                <div align="center" className="cardtitle">Week{" "}
-                                    {weektime.mondayDate
-                                        .toLocaleDateString()
-                                        .slice(0, 10)}{" "}
-                                    -{" "}
-                                    {new Date(
-                                        weektime.mondayDate.getTime() + 6 * 24 * 3600 * 1000
-                                    )
-                                        .toLocaleDateString()
-                                        .slice(0, 10)}
-                                </div>
-                                <div className="flexContainer">
-                                    <div className="project">
-                                        Project: {weektime.contract.projectName}
+                        <div className="weektimeList-margin" key={index}>
+                            <Link to={"/timesheet/weektime" + map.get(index)}>
+                                <div
+                                    className="card Weektime"
+                                    onClick={() => this.props.selectWeek(weektime)}
+                                >
+                                    <div align="center" className="cardtitle">Week{" "}
+                                        {weektime.mondayDate
+                                            .toLocaleDateString()
+                                            .slice(0, 10)}{" "}
+                                        -{" "}
+                                        {new Date(
+                                            weektime.mondayDate.getTime() + 6 * 24 * 3600 * 1000
+                                        )
+                                            .toLocaleDateString()
+                                            .slice(0, 10)}
                                     </div>
-                                    <div className="hour">
-                                        Hour: {this.sumHours(weektime)}
+                                    <div className="flexContainer">
+                                        <div className="project">
+                                            Project: {weektime.contract.projectName}
+                                        </div>
+                                        <div className="hour">
+                                            Hour: {this.sumHours(weektime)}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
