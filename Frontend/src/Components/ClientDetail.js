@@ -10,10 +10,11 @@ class ClientDetail extends React.Component {
 		super(props);
 		this.state = {
 			client: null,
-			redirect: false
+			redirect: false,
 		};
 
 		this.handleChange = this.handleChange.bind(this);
+		this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -28,14 +29,19 @@ class ClientDetail extends React.Component {
 		this.setState({ client: client });
 	};
 
+	handleCheckboxChange = prop => event => {
+		let client = { ...this.state.client };
+		client[prop] = event.target.checked;
+		this.setState({ client: client });
+	};
+
 	handleSubmit(event) {
 		this.props.updateClient(this.state.client);
-		this.setState({redirect: true});
+		this.setState({ redirect: true });
 		event.preventDefault();
 	}
 
 	render() {
-
 		if (this.state.redirect) {
 			return <Redirect push to="/clientManagement" />;
 		}
@@ -44,7 +50,7 @@ class ClientDetail extends React.Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
-						<label for="companyName">Company: </label>
+						<label>Company: </label>
 						<input
 							value={this.state.client.companyName}
 							onChange={this.handleChange('companyName')}
@@ -55,7 +61,7 @@ class ClientDetail extends React.Component {
 						/>
 					</div>
 					<div className="form-group">
-						<label for="contactName">Contact Name: </label>
+						<label>Contact Name: </label>
 						<input
 							value={this.state.client.contactName}
 							onChange={this.handleChange('contactName')}
@@ -66,7 +72,7 @@ class ClientDetail extends React.Component {
 						/>
 					</div>
 					<div className="form-group">
-						<label for="contactPhoneNumber">Phone Number: </label>
+						<label>Phone Number: </label>
 						<input
 							value={this.state.client.contactPhoneNumber}
 							type="text"
@@ -77,7 +83,7 @@ class ClientDetail extends React.Component {
 						/>
 					</div>
 					<div className="form-group">
-						<label for="contactEmail">Email</label>
+						<label>Email</label>
 						<input
 							value={this.state.client.contactEmail}
 							type="email"
@@ -91,12 +97,12 @@ class ClientDetail extends React.Component {
 					<div className="form-group form-check">
 						<input
 							checked={this.state.client.enabled}
-							onChange={this.handleChange('enabled')}
+							onChange={this.handleCheckboxChange('enabled')}
 							type="checkbox"
 							className="form-check-input"
 							id="enabled"
 						/>
-						<label className="form-check-label" for="enabled">
+						<label className="form-check-label" >
 							Enabled
 						</label>
 					</div>
@@ -116,4 +122,7 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(null, mapDispatchToProps)(ClientDetail);
+export default connect(
+	null,
+	mapDispatchToProps
+)(ClientDetail);
