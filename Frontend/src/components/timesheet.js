@@ -5,12 +5,12 @@ import {
     Route,
     Switch
 } from 'react-router-dom'
-import { fetchContracts, selectInitial, select } from '../Actions/weektime_actions';
+import { fetchContracts, selectInitial, select } from '../actions/weektime_actions';
 import { connect } from "react-redux";
 import SideBar from "./sideBar";
 import WeekTimeList from "./weektimeList";
 import WeektimeDetails from "./weektimeDetails";
-import loading from '../Resource/loading2.gif';
+import loading from '../resource/loading2.gif';
 
 class Timesheet extends React.Component {
     constructor(props) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import './common.css';
-import timesheetIcon from '../Resource/property-time.png';
-import userIcon from '../Resource/users.png';
-import TimesheetManagementIcon from '../Resource/TimesheetManagement.png';
+import timesheetIcon from '../resource/property-time.png';
+import userIcon from '../resource/users.png';
+import TimesheetManagementIcon from '../resource/TimesheetManagement.png';
 import { Link } from 'react-router-dom'
 
 class Dashboard extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './common.css';
-import { fetchClients } from '../Actions/client_actions';
+import { fetchClients } from '../actions/client_actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 

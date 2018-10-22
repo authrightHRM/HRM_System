@@ -3,8 +3,8 @@ import NavBar from './navBar';
 import Dashboard from './dashboard';
 import Login from './login';
 import TimeSheet from './timesheet';
-import ClientList from './ClientList';
-import ClientDetail from './ClientDetail';
+import ClientList from './clientList';
+import ClientDetail from './clientDetail';
 import MyProfile from './myProfile';
 import {
     Route,
@@ -12,7 +12,7 @@ import {
     Redirect,
     withRouter
 } from 'react-router-dom'
-import { login, logout, checkSession } from '../Actions/auth_actions';
+import { login, logout, checkSession } from '../actions/auth_actions';
 import { connect } from 'react-redux';
 
 class PageRouter extends React.Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import PageRouter from './Components/pageRouter';
-import StickFooter from './Components/stickFooter';
+import PageRouter from './components/pageRouter';
+import StickFooter from './components/stickFooter';
 
 class App extends Component {
   render() {

@@ -24,7 +24,7 @@ footer {
   flex-direction: column;
   overflow: hidden;
   background-position: center;
-  background-image: url("Resource/background.jpg");
+  background-image: url("resource/background.jpg");
 }
 
 .pages {

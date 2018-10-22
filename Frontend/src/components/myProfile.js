@@ -1,8 +1,8 @@
 import React from 'react';
 import './common.css';
-import myAvatar from '../Resource/myportrait.jpg'
+import myAvatar from '../resource/myportrait.jpg'
 import { connect } from "react-redux";
-import { updateProfile } from '../Actions/user_actions';
+import { updateProfile } from '../actions/user_actions';
 
 class MyProfile extends React.Component {
     constructor(props) {
